@@ -24,6 +24,7 @@ app.use((req,res,next)=>{
     
 });
 //rutas base
+app.use(express.static('./'));
 app.use('/api',invoice_routes);
 app.get('*',function(req,res,next){
     res.sendFile(path.resolve('client/index.html'));
