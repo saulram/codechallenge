@@ -26,10 +26,6 @@ app.use((req, res, next) => {
 
 //rutas base
 app.use('/api', invoice_routes);
-app.get('*', function (req, res, next) {
-    res.sendFile(path.resolve('client/index.html'));
-
-});
 
 
 module.exports = app;
