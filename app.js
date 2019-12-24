@@ -1,6 +1,8 @@
 'use strict'
 
 var express = require('express');
+
+var cors = require('cors');
 var bodyParser = require('body-parser');
 var app = express();
 
@@ -23,6 +25,10 @@ app.use((req,res,next)=>{
 });
 //rutas base
 app.use('/api',invoice_routes);
+app.get('*',function(req,res,next){
+    res.sendFile(path.resolve('client/index.html'));
+
+});
 
 
 module.exports = app;
